@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphic Design</title>
+    <style>
+      body {
+        background-color: #f8f7f3;
+        margin: 0;
+      }
+
+      .hero {
+        background: linear-gradient(to top, #ffe8f6 0%, white 100%);
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 60px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .header {
+        color: #0b3c44;
+        font-size: 80px;
+        margin-top: 80px;
+      }
+
+      .call {
+        color: #1a1b1f;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 30px 100px 50px 100px;
+        margin: 0;
+      }
+
+      h1 {
+        color: #00667b;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 65px;
+        margin: 0;
+        padding: 50px 100px 20px 100px;
+      }
+
+      h2 {
+        color: #00667b;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        line-height: 1.5;
+        margin: 0 auto;
+        padding: 20px 100px 20px 100px;
+        text-align: left;
+      }
+
+      h3 {
+        color: #35495e;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0 100px 50px 100px;
+        text-align: justify;
+      }
+
+      img {
+        border-radius: 10px;
+        border: 1.5px solid #000;
+        box-shadow: 0px 8px 8px 0px rgba(37, 38, 89, 0.1);
+        max-width: 100%;
+        margin: 15px 0;
+      }
+
+      p {
+        color: #35495e;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 50px 0 0;
+        padding: 50px 100px 100px;
+        text-align: justify;
+      }
+
+      button {
+        background: #82eb30;
+        border: 1px solid #69d218;
+        border-radius: 10px;
+        box-shadow: 0px 8px 8px 0px rgba(37, 38, 89, 0.08);
+        color: #ffffff;
+        cursor: pointer;
+        display: block;
+        font-size: 20px;
+        margin: 10px auto;
+        padding: 15px 50px;
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background: #eac43b;
+        border: 1.5px solid #e5ce70;
+        color: #f8f7f3;
+        cursor: pointer;
+        box-shadow: 0px 2px 5px 0px rgba(37, 38, 89, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .intro {
+        background: #f8f7f3;
+        margin: 0;
+      }
+
+      .blogs {
+        margin: 60px 0;
+        padding-bottom: 50px;
+      }
+
+      .gridblogs {
+        display: grid;
+        column-gap: 35px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        max-width: 1200px;
+        padding: 50px 0 50px;
+        row-gap: 60px;
+      }
+
+      .blogcard {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 8px 8px 0px rgba(37, 38, 89, 0.2);
+      }
+
+      .blogcard:hover {
+        border: 0.3px solid #1a1b1f;
+        transform: translateY(-2px);
+        box-shadow: 0px 8px 8px 0px rgba(65, 38, 89, 0.3);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .blogcard:hover .imgblog {
+        box-shadow: 0px 8px 8px 0px rgba(23, 22, 24, 0.3);
+        border: 0.3px solid #000000;
+        transform: translateY(-30px);
+      }
+
+      .bcontent {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 15px;
+        text-align: left;
+      }
+
+      .imgblog {
+        border-radius: 10px;
+        border: 1px solid #000000;
+        margin: 0;
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .cardtitle {
+        color: #35495e;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 20px 0 10px;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      .description {
+        color: #35495e;
+        font-size: 15px;
+        padding: 10px 0 10px;
+      }
+
+      .courses {
+        background: linear-gradient(to top, #ffe8f6 0%, #f8f7f3 10%);
+        margin: 0;
+        padding-bottom: 100px;
+      }
+
+      .gridcourse {
+        display: grid;
+        row-gap: 50px;
+        justify-items: center;
+        padding: 50px 0 50px;
+        margin-bottom: 50px;
+      }
+
+      .coursecard {
+        display: flex;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 8px 8px 0px rgba(37, 38, 89, 0.2);
+        overflow: hidden;
+        transform: scale(0.9);
+      }
+
+      .coursecard:hover {
+        transform: scale(1);
+        transition: all 500ms ease-in-out;
+        border: 1px solid black;
+      }
+
+      .coursecard:hover .emph {
+        font-weight: 700;
+        color: #0b3c44;
+      }
+
+      .coursecard:hover .cardtitle {
+        font-weight: 700;
+        color: #00667b;
+      }
+
+      .imgcrs1 {
+        align-items: center;
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/627/original/calarts_coursera.jpg?1693765490);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex: 2;
+        object-fit: cover;
+        padding: 20px 20px 20px 0;
+      }
+
+      .imgcrs2 {
+        align-items: center;
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/637/original/digital_design_skillshare.jpg?1693766163);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex: 2;
+        object-fit: cover;
+        padding: 20px 20px 20px 0;
+      }
+
+      .imgcrs3 {
+        align-items: center;
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/644/original/linkedin_learning.jpg?1693768438);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex: 2;
+        object-fit: cover;
+        padding: 20px 20px 20px 0;
+      }
+
+      .ccontent {
+        flex: 2;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        text-align: left;
+      }
+
+      .newsletter {
+        background: #ffe8f6;
+        margin: 0;
+        padding: 20px 0 0;
+      }
+
+      .youin {
+        color: #00667b;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 65px;
+        font-weight: 700;
+        padding: 50px 50px 100px 50px;
+        margin: 100px;
+      }
+
+      .sub {
+        color: #00667b;
+        padding: 50px 50px 0 50px;
+        text-align: center;
+      }
+
+      .subp {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font-weight: 200;
+        line-height: 1.5;
+        margin: 50px auto;
+        padding: 10px 100px;
+        text-align: center;
+      }
+
+      .unsub {
+        color: #a1a2a3;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: 200;
+        line-height: 1.5;
+        padding: 10px 30px 20px;
+        text-align: center;
+      }
+
+      .footer {
+        background-color: #640c54;
+        color: #f8f7f3;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        padding: 30px 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="container">
+        <h1>
+          <div class="header">
+            Ready, Set, Launch! Watch Your Creativity Soar!
+          </div>
+          <div class="call">
+            Step into a world where imagination has no limits and creativity
+            knows no boundaries.
+          </div>
+        </h1>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/555/original/graphic_design_7_elements_by_christly_guevarra.jpg?1693720614"
+          alt="graphic design elements"
+        />
+        <p>
+          If the very thought of graphic design sets your heart racing, you're
+          about to embark on an exhilarating journey. Graphic design isn't just
+          about visuals—it's a symphony of ideas, a canvas of innovation, and a
+          playground for the imagination. Whether you're a design maestro or a
+          budding enthusiast, this page is your passport to the wondrous
+          universe of graphic design.
+        </p>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="container">
+        <h1>Welcome to the World of Graphic Design!</h1>
+        <p>
+          Graphic design combines art and technology to create useful,
+          meaningful, and functional visual and textual content that
+          successfully and efficiently conveys or enhances a message for the
+          intended audience. The scope of graphic design is vast and covers a
+          range of activities, including logo creation, advertising, branding,
+          marketing, and user experience design.
+          <br />
+          <br />
+          In fact, almost everyone today practices some form of graphic design
+          in their daily life — whether it is adding text to an image for social
+          media or color-coding a spreadsheet for work. Basically, if you're
+          creating visual content, you're practicing some form of graphic
+          design.
+        </p>
+        <div class="blogs">
+          <h2>
+            Stay Ahead with Industry Trends:
+            <br />
+            Your Creative Compass
+          </h2>
+          <h3>
+            In the ever-evolving landscape of graphic design, staying up-to-date
+            is essential. Check out these top industry websites:
+          </h3>
+          <div class="gridblogs">
+            <div class="blogcard">
+              <a href="https://dribbble.com/stories" target="_blank">
+                <div class="bcontent">
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/565/original/dribble_stories.jpg?1693728413"
+                    alt=""
+                    class="imgblog"
+                  />
+                  <div class="cardtitle">Courtside: The Dribble Blog</div>
+                  <div class="description">
+                    Featuring stories about inspirational designs,
+                    illustrations, and graphic elements from the worlds best
+                    designers, and Dribbble.
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="blogcard">
+              <div class="bcontent">
+                <a
+                  href="https://elements.envato.com/learn?_ga=2.180952421.319379898.1693721240-1090472417.1689629347&utm_campaign=envato-blog_news_envato-elements-blog&utm_medium=referral&utm_source=blog"
+                  target="_blank"
+                >
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/562/original/envato_elements_blog.jpg?1693727772"
+                    alt=""
+                    class="imgblog"
+                  />
+                  <div class="cardtitle">
+                    Learn, Create & Be Inspired - Envato Elements
+                  </div>
+                  <div class="description">
+                    Resource that covers a wide range of topics related to
+                    creative assets, trends and tools to inspire anyone'
+                    creative projects.
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="blogcard">
+              <div class="bcontent">
+                <a href="https://www.behance.net/live" target="_blank">
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/566/original/adobe_live_behance.jpg?1693728460"
+                    alt=""
+                    class="imgblog"
+                  />
+                  <div class="cardtitle">
+                    Adobe Live, An Online Community by Adobe
+                  </div>
+                  <div class="description">
+                    Daily streams that features top creatives as they share
+                    their work, design hacks, and engage with the community in
+                    real-time.
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="blogcard">
+              <div class="bcontent">
+                <a href="https://99designs.com/blog/" target="_blank">
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/557/original/99designs_creative_edge.jpg?1693725237"
+                    alt=""
+                    class="imgblog"
+                  />
+                  <div class="cardtitle">
+                    The Creative Edge,a design blog by 99designs
+                  </div>
+                  <div class="description">
+                    Check out our tips, tutorials and advice on graphic design,
+                    logo design, freelancing and running a successful business.
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="blogcard">
+              <a
+                href="https://webflow.com/author/nikiya-palombi"
+                target="_blank"
+              >
+                <div class="bcontent">
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/563/original/nikiya_webflow_blogs.jpg?1693727787"
+                    alt=""
+                    class="imgblog"
+                  />
+                  <div class="cardtitle">
+                    What is graphic design? by Nikiya Palombi
+                  </div>
+                  <div class="description">
+                    This beginners guide walks you through the definition of
+                    graphic design and shares of different types.
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="blogcard">
+              <a href="https://creativemarket.com/blog" target="_blank">
+                <div class="bcontent">
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/564/original/brush_up_creative_market.jpg?1693728298"
+                    alt=""
+                    class="imgblog"
+                  />
+                  <div class="cardtitle">
+                    Brush Up: Creative Market's New Inspiration Hub
+                  </div>
+                  <div class="description">
+                    Feature articles, tutorials, showcases, and other resources
+                    related to design, creativity, and the use of Creative
+                    Market's products and assets.
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="courses">
+      <div class="container">
+        <h2>
+          <div class="cintro">
+            Beyond Boundaries:
+            <br />
+            Courses to Expand Your Design Horizons
+          </div>
+        </h2>
+        <h3>
+          <div class="cintro">
+            If you still have a need for knowledge, expect to be quenched by the
+            brilliance of these free courses. They're not only opportunities for
+            learning; they're the spark that will ignite your creative fire.
+            Prepare to unleash your full design potential with these carefully
+            chosen resources:
+          </div>
+        </h3>
+        <div class="gridcourse">
+          <div class="coursecard">
+            <div class="imgcrs1"></div>
+            <div class="ccontent">
+              <div class="cardtitle">Graphic Design Specialization</div>
+              <div class="offeredBy">
+                By
+                <span class="emph"
+                  >California Institute of Arts (Coursera)</span
+                >
+              </div>
+              <div class="description">
+                <div class="time">
+                  Time to Complete:
+                  <span class="emph">Approximately 6 months</span>
+                </div>
+                <div class="level">
+                  Level: <span class="emph">Beginner</span>
+                </div>
+                <div class="cert">
+                  Certificate: <span class="emph">Yes, with a fee</span>
+                </div>
+                <div class="cost">Cost:<span class="emph"> Free </span></div>
+                <br />
+                <br />
+                A comprehensive five-course series that teaches the fundamental
+                skills required to make sophisticated graphic design: process,
+                historical context, and communication through image-making and
+                typography. The specialization aims to equip learners with a set
+                of transferable formal and conceptual tools for “making and
+                communicating” in the field of graphic design.
+              </div>
+              <br />
+              <a
+                href="https://www.coursera.org/specializations/graphic-design?skipBrowseRedirect=true"
+                target="_blank"
+              >
+                <div class="cbutton">
+                  <button><strong>Begin Course</strong></button>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="coursecard">
+            <div class="imgcrs2"></div>
+            <div class="ccontent">
+              <div class="cardtitle">
+                Digital Design Masterclass for Graphic Designers
+              </div>
+              <div class="offeredBy">
+                By <span class="emph">Skillshare</span>
+              </div>
+              <div class="description">
+                <div class="time">
+                  Time to Complete:
+                  <span class="emph">Approximately 9 hrs</span>
+                </div>
+                <div class="level">
+                  Level: <span class="emph">Intermediate</span>
+                </div>
+                <div class="cert">
+                  Certificate: <span class="emph">Yes</span>
+                </div>
+                <div class="cost">
+                  Cost:<span class="emph">
+                    Free for 60 days (You have to give your credit card info to
+                    complete the class. However, you can cancel at any
+                    time.)</span
+                  >
+                </div>
+                <br />
+                <br />
+                A course designed to quickly get graphic designers up to speed
+                on the most recent and exciting digitally oriented projects,
+                allowing them to broaden their skill set and offer new services.
+                This course covers a wide range of digital design projects,
+                including social media, icon design, web design, and more.
+              </div>
+              <br />
+              <a
+                href="https://www.skillshare.com/en/classes/Digital-Design-Masterclass-for-Graphic-Designers/295046543?via=search-layout-grid"
+                target="_blank"
+              >
+                <div class="cbutton">
+                  <button><strong>Begin Course</strong></button>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="coursecard">
+            <div class="imgcrs3"></div>
+            <div class="ccontent">
+              <div class="cardtitle">
+                Learn Adobe Photoshop, InDesign, and Illustrator
+              </div>
+              <div class="offeredBy">
+                By <span class="emph">LinkedIn Learning</span>
+              </div>
+              <div class="description">
+                <div class="time">
+                  Time to Complete:
+                  <span class="emph">Approximately 25 hrs</span>
+                </div>
+                <div class="level">
+                  Level: <span class="emph">Beginner to Intermediate</span>
+                </div>
+                <div class="cert">
+                  Certificate: <span class="emph">Yes</span>
+                </div>
+                <div class="cost">
+                  Cost:<span class="emph">
+                    Free trial for one month or Free with a LinkedIn Premium
+                    Account</span
+                  >
+                </div>
+                <br />
+                <br />
+                A four-course learning path that will help you master these
+                powerful industry-standard applications and build must-have
+                skills for a graphic design career.Explore the image-editing
+                features of Adobe Photoshop. Create layouts that communicate
+                your message clearly and effectively. Discover how Creative
+                Cloud applications work in a publishing workflow.
+              </div>
+              <br />
+              <a
+                href="https://www.linkedin.com/learning/paths/learn-adobe-photoshop-indesign-and-illustrator"
+                target="_blank"
+              >
+                <div class="cbutton">
+                  <button><strong>Begin Course</strong></button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <div class="container">
+        <div class="youin">
+          <h1>
+            <div class="sub">
+              Stay Inspired. Stay Informed. Join the Creative Conversation.💬
+            </div>
+          </h1>
+          <div class="subp">
+            Become part of a community that lives and breathes creativity. By
+            signing up for our newsletter, you'll receive exclusive tips,
+            behind-the-scenes insights, and a first-row seat to the ever-dynamic
+            world of graphic design.
+          </div>
+          <br />
+          <div class="sbutton">
+            <button>
+              <strong>Subscribe Now!</strong>
+            </button>
+          </div>
+          <div class="unsub">
+            It is free and you can unsubscribe at any time.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">Coded by Christly Guevarra 👩‍💻</div>
+
+    <script>
+      function subscribe() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+
+        let youin = document.querySelector(".youin");
+
+        if (name === null || name.trim() === "") {
+          youin.innerHTML =
+            "Uh-oh! Some fields need your attention. <br /> Kindly refresh and fill in your details. 😉";
+        } else if (email === null || email.trim() === "") {
+          youin.innerHTML =
+            "Uh-oh! Some fields need your attention. <br /> Kindly refresh and fill in your details. 😉";
+        } else {
+          youin.innerHTML =
+            "You are in, " +
+            name +
+            "! <br /> Expect Creativity Delivered to Your Inbox! 📬";
+        }
+      }
+      let subscribeNow = document.querySelector(".sbutton");
+      subscribeNow.addEventListener("click", subscribe);
+    </script>
+  </body>
+</html>
